@@ -2,10 +2,12 @@
 
 namespace app\Controllers;
 use app\Controllers\Controller;
+use Application\View\View;
 
 class PainelController extends Controller {
     public function painel() {
-        echo 'Painel Controller method index';
+
+        return View::make('hello');
     }
 
     public function home() {

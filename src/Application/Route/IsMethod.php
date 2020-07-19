@@ -2,19 +2,20 @@
 
 namespace Application\Route;
 
+use app\Controllers\Controller;
+
 class IsMethod
 {
-    public static function callMethod($controller, $method)
+    public static function run($controller, $action, $parameters)
     {
-        // if (file_exists($controller . 'php')) {
-            if (method_exists($controller, $method)) {
-                var_dump($_SERVER['REQUEST_URI']);
-                $controller->$method();
-            } else {
-                var_dump($_SERVER['REQUEST_URI']);
-                echo 'Paggina 404';
-            }
-        // }
-        // $controller->missingMethod();
+        if (method_exists($controller, $action)) {
+            $args = (array) $parameters;
+            call_user_func_array([$controller, $action], $args);
+            // var_dump($_SERVER['REQUEST_URI']);
+            // var_dump($args);
+        } else {
+            $controller = new Controller;
+            $controller->missingMethod();
+        }
     }
 }

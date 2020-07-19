@@ -16,16 +16,16 @@ class Route
             self::$route = $route;
 
             $method = ParseRoute::parse(self::getURL());
+            $parameters = $method['params'];
+            $action = $method['action'];
 
-            $controller = new $controller;
-
-            return IsMethod::callMethod($controller, $method);
+            IsMethod::run($controller, $action, $parameters);
         }
     }
 
     public static function getURL()
     {
-        $uri = Uri::getUri();
+        $uri = Uri::getURI();
         return $uri;
     }
 }

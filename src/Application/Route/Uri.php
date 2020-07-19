@@ -4,7 +4,7 @@ namespace Application\Route;
 
 class Uri
 {
-    public static function getUri()
+    public static function getURI()
     {
         return $_SERVER['REQUEST_URI'];
     }

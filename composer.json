@@ -1,0 +1,13 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Application\\": "src/Application",
+            "app\\": "app/",
+            "lib": "vendor/"
+        }
+    },
+
+    "require": {
+        "easyframework/collections": "2.1.*"
+    }
+}

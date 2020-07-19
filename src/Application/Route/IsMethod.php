@@ -11,8 +11,6 @@ class IsMethod
         if (method_exists($controller, $action)) {
             $args = (array) $parameters;
             call_user_func_array([$controller, $action], $args);
-            // var_dump($_SERVER['REQUEST_URI']);
-            // var_dump($args);
         } else {
             $controller = new Controller;
             $controller->missingMethod();

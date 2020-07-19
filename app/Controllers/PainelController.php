@@ -1,16 +1,21 @@
 <?php
 
 namespace app\Controllers;
+
 use app\Controllers\Controller;
 use Application\View\View;
 
-class PainelController extends Controller {
-    public function painel() {
+class PainelController extends Controller
+{
+    public function painel()
+    {
 
-        return View::make('hello');
+        $nome = 'Thauan';
+        return View::make('home.hello', ['nome' => $nome]);
     }
 
-    public function home() {
+    public function home()
+    {
         echo 'index Controller';
     }
 }

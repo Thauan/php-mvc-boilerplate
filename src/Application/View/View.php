@@ -2,20 +2,24 @@
 
 namespace Application\View;
 
+use ETI\BLADE\Blade;
+
 class View
 {
-    // public $path = '/media/thauan/Mint14/Workspace/mvc/resources/views';
+    protected $path;
 
-    public static function make($nameFile)
+    public function __construct()
     {
-        $path = __DIR__.'resources/views';
+    }
 
-        $pathName = explode("public", $_SERVER['DOCUMENT_ROOT']);
+    public static function make($view, array $params = [])
+    {
+        $path = explode("public", $_SERVER['DOCUMENT_ROOT']);
+        $views = $path[0] . "resources/views/";
+        $cache = $path[0] . "storage/cache";
 
-        if (!file_exists($pathName[0].'resources/views/'.$nameFile.'.'.'phtml')) {
-            echo 'View não encontrada';
-        }
+        $blade = new Blade($views, $cache);
 
-        include $pathName[0].'resources/views/'.$nameFile.'.'.'phtml';
+        echo $blade->view()->make($view, $params)->render();
     }
 }

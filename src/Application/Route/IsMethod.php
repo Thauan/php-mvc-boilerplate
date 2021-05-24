@@ -10,7 +10,7 @@ class IsMethod
     {
         if (method_exists($controller, $action)) {
             $args = (array) $parameters;
-            call_user_func_array([$controller, $action], $args);
+            call_user_func_array([(new $controller), $action], $args);
         } else {
             $controller = new Controller;
             $controller->missingMethod();

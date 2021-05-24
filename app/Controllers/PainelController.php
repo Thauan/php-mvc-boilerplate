@@ -11,11 +11,12 @@ class PainelController extends Controller
     {
 
         $nome = 'Thauan';
-        return View::make('home.hello', ['nome' => $nome]);
+        return View::make('painel.index', ['nome' => $nome]);
     }
 
     public function home()
     {
-        echo 'index Controller';
+        $nome = 'Thauan';
+        return View::make('home.index', ['nome' => $nome]);
     }
 }

@@ -13,14 +13,17 @@ class PainelController extends Controller
 
         $db = new DB();
         $users = $db->select("SELECT * FROM users");
+        $nome = 'Thauan2';
 
-        $nome = 'Thauan';
-        return View::make('painel.index', ['nome' => $nome]);
+        return View::make('painel.index', ['nome' => $nome, 'users' => $users]);
     }
 
     public function home()
     {
-        $nome = 'Thauan';
-        return View::make('home.index', ['nome' => $nome]);
+        $db = new DB();
+        $users = $db->select("SELECT * FROM users");
+        $nome = 'Thauan2';
+
+        return View::make('home.index', ['nome' => $nome, 'users' => $users]);
     }
 }

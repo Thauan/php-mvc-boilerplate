@@ -2,13 +2,20 @@
     "autoload": {
         "psr-4": {
             "Application\\": "src/Application",
+            "Database\\": "database/",
+            "Container\\": "src/Container",
             "app\\": "app/",
-            "lib\\": "vendor/",
-            "Container\\": "src/Container"
+            "lib\\": "vendor/"
         }
     },
 
     "require": {
-        "eti/laravel-blade": "^1.0"
+        "eti/laravel-blade": "^1.0",
+        "robmorgan/phinx": "^0.13.4"
+    },
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": false
+        }
     }
 }

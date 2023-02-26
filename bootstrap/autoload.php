@@ -1,4 +1,10 @@
 <?php
 spl_autoload_register(function($class) {
-    require_once($class.'.php');
+    if(file_exists($class.'.php')) {
+        require($class.'.php');
+    }
+
+    if(file_exists('Models/'.$class.'.php')) {
+        require('Models/'.$class.'.php');
+    }
 });

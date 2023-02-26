@@ -1,4 +1,7 @@
 {
+    "scripts": {
+        "test": "phpunit"
+    },
     "autoload": {
         "psr-4": {
             "Application\\": "src/Application",

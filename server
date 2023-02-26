@@ -1,0 +1,5 @@
+#!/bin/bash
+PORT="$1"
+DIR="$2"
+
+php -S 127.0.0.1:$PORT --docroot=$DIR

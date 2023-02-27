@@ -16,6 +16,14 @@ class PainelController extends Controller
         $users = $instance->getAll();
         $nome = 'Thauan2';
 
+        dd($users);
+        // $attributes['user_id'] = 1;
+        // $attributes['email'] = 'thaubr28@gmail.com';
+        // $attributes['name'] = 'Thauan';
+        // $attributes['password'] = '12345678';
+
+        // $users = $instance->save($attributes);
+
         return View::make('painel.index', ['nome' => $nome, 'users' => $users]);
     }
 
